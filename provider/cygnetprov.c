@@ -19,6 +19,8 @@ const OSSL_ALGORITHM *cygnet_provider_query_operation(
     *no_cache = 0;
 
     switch (operation_id) {
+    case OSSL_OP_MAC:
+        return cygnet_mac_algorithms;
     case OSSL_OP_KEM:
         return cygnet_kem_algorithms;
     case OSSL_OP_KEYMGMT:
@@ -58,7 +60,7 @@ int cygnet_provider_get_params(void *provider_ctx, OSSL_PARAM params[])
 {
     OSSL_PARAM *parameter;
     char *name = "Cygnet Provider";
-    char *version = "0.1.0";
+    char *version = "0.1.1";
     char *buildinfo = "Sanctum SecOps LLC";
     int status = 1;
 

@@ -30,6 +30,7 @@ int cygnet_provider_get_capabilities(
     OSSL_CALLBACK *callback,
     void *arg);
 
+extern const OSSL_ALGORITHM cygnet_mac_algorithms[];
 extern const OSSL_ALGORITHM cygnet_kem_algorithms[];
 extern const OSSL_ALGORITHM cygnet_keymgmt_algorithms[];
 extern const OSSL_ALGORITHM cygnet_signature_algorithms[];
