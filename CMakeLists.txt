@@ -8,4 +8,5 @@ set(CMAKE_C_EXTENSIONS OFF)
 find_package(OpenSSL 3.0 REQUIRED COMPONENTS Crypto)
 
 add_subdirectory(provider)
+enable_testing()
 add_subdirectory(tests)
