@@ -1,0 +1,4 @@
+Cygnet Provider
+Copyright (c) 2026 Sanctum SecOps LLC.
+
+This product is designed for deployment with OpenSSL 3.x in environments where the OpenSSL FIPS provider is configured and enabled by the operator. This scaffold does not constitute a validated cryptographic module.

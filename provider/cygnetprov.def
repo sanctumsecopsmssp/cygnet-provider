@@ -1,0 +1,3 @@
+LIBRARY cygnetprov
+EXPORTS
+    OSSL_provider_init
