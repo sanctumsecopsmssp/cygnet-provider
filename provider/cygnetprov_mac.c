@@ -138,6 +138,7 @@ static int cygnet_mac_final(
 
 static const OSSL_PARAM cygnet_mac_known_ctx_params[] = {
     OSSL_PARAM_utf8_string(OSSL_MAC_PARAM_DIGEST, NULL, 0),
+    OSSL_PARAM_utf8_string(OSSL_MAC_PARAM_CIPHER, NULL, 0),
     OSSL_PARAM_octet_string(OSSL_MAC_PARAM_KEY, NULL, 0),
     OSSL_PARAM_size_t(OSSL_MAC_PARAM_SIZE, NULL),
     OSSL_PARAM_size_t(OSSL_MAC_PARAM_BLOCK_SIZE, NULL),

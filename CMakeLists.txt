@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(cygnet_provider VERSION 0.1.0 LANGUAGES C)
+project(cygnet_provider VERSION 0.1.3 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)

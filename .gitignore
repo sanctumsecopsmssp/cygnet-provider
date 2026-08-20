@@ -4,3 +4,8 @@ build/
 *.a
 *.dylib
 .DS_Store
+cygnet-provider-v*.tar.gz
+cygnet-provider-v*.tar.gz.asc
+SHA256SUMS-v*
+build/
+*.bak-*
