@@ -14,12 +14,24 @@ target_include_directories(cygnetprov PRIVATE
 
 target_link_libraries(cygnetprov PRIVATE OpenSSL::Crypto)
 
+if(APPLE)
+    set(CYGNET_MODULE_SUFFIX ".dylib")
+elseif(WIN32)
+    set(CYGNET_MODULE_SUFFIX ".dll")
+else()
+    set(CYGNET_MODULE_SUFFIX ".so")
+endif()
+
 set_target_properties(cygnetprov PROPERTIES
     PREFIX ""
     OUTPUT_NAME "cygnetprov"
+    SUFFIX "${CYGNET_MODULE_SUFFIX}"
 )
 
-set(CYGNET_TEST_MODULE "${CMAKE_CURRENT_BINARY_DIR}/cygnetprov.so")
+set(CYGNET_FIPS_MODULE "/usr/lib/x86_64-linux-gnu/ossl-modules-3/fips.so"
+    CACHE FILEPATH "Path to the FIPS provider module")
+
+set(CYGNET_TEST_MODULE "${CMAKE_CURRENT_BINARY_DIR}/cygnetprov${CYGNET_MODULE_SUFFIX}")
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/openssl-cygnet-test.cnf.in"
     "${CMAKE_BINARY_DIR}/openssl-cygnet-test.cnf"

@@ -14,4 +14,5 @@ target_link_libraries(mac_forward_test PRIVATE OpenSSL::Crypto)
 add_test(NAME mac_forward_test COMMAND mac_forward_test)
 set_tests_properties(mac_forward_test PROPERTIES
     ENVIRONMENT "OPENSSL_CONF=${CMAKE_BINARY_DIR}/openssl-cygnet-test.cnf"
+    SKIP_RETURN_CODE 77
 )

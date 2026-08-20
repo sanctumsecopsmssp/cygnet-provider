@@ -82,8 +82,8 @@ int main(void)
     const char *forwarded_provider = "unknown";
 
     if (!OSSL_PROVIDER_available(NULL, "fips")) {
-        fprintf(stderr, "fips provider unavailable\n");
-        return 1;
+        fprintf(stderr, "fips provider unavailable - skipping\n");
+        return 77;
     }
     if (!OSSL_PROVIDER_available(NULL, "cygnet")) {
         fprintf(stderr, "cygnet provider unavailable\n");
