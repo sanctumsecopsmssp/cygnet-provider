@@ -4,6 +4,7 @@ add_library(cygnetprov MODULE
     cygnetprov_mac.c
     cygnetprov_kem.c
     cygnetprov_kmgmt.c
+    cygnetprov_mac.c
     cygnetprov_sig.c
 )
 

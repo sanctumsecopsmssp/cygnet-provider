@@ -17,4 +17,4 @@ module = /usr/lib/x86_64-linux-gnu/ossl-modules-3/fips.so
 
 [sso_labs_sect]
 activate = 1
-module = /home/cyadmin/cygnet-provider/build/provider/cygnetprov.so
+module = /usr/lib/x86_64-linux-gnu/ossl-modules-3/cygnetprov.so
