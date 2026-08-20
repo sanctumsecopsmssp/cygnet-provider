@@ -1,4 +1,16 @@
 Cygnet Provider
 Copyright (c) 2026 Sanctum SecOps LLC.
 
-This product is designed for deployment with OpenSSL 3.x in environments where the OpenSSL FIPS provider is configured and enabled by the operator. This scaffold does not constitute a validated cryptographic module.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License. You may obtain a copy
+of the License in the accompanying LICENSE file or at
+http://www.apache.org/licenses/LICENSE-2.0
+
+This product is designed for deployment with OpenSSL 3.x in environments
+where the OpenSSL FIPS provider is configured and enabled by the operator.
+
+Cygnet Provider is NOT a validated cryptographic module. It has not been
+submitted to, and holds no certificate from, the NIST Cryptographic Module
+Validation Program (CMVP). Cygnet Provider performs no independently
+validated cryptography; where FIPS-approved algorithms are required, they
+are supplied by the operator-configured validated provider.
