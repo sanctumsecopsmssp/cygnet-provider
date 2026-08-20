@@ -1,0 +1,24 @@
+openssl_conf = openssl_init
+
+[openssl_init]
+providers = provider_sect
+alg_section = algorithm_sect
+
+[provider_sect]
+base = base_sect
+fips = fips_sect
+sso-labs = sso_labs_sect
+
+[base_sect]
+activate = 1
+
+[fips_sect]
+activate = 1
+module = /usr/lib/x86_64-linux-gnu/ossl-modules-3/fips.so
+
+[sso_labs_sect]
+activate = 1
+module = /opt/sanctum/cygnet-provider/lib/ossl-modules/cygnetprov.so
+
+[algorithm_sect]
+default_properties = fips=yes
