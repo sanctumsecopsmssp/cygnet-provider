@@ -9,3 +9,5 @@ cygnet-provider-v*.tar.gz.asc
 SHA256SUMS-v*
 build/
 *.bak-*
+build/
+*.so

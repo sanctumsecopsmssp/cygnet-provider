@@ -19,6 +19,13 @@ set_target_properties(cygnetprov PROPERTIES
     OUTPUT_NAME "cygnetprov"
 )
 
+set(CYGNET_TEST_MODULE "${CMAKE_CURRENT_BINARY_DIR}/cygnetprov.so")
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/openssl-cygnet-test.cnf.in"
+    "${CMAKE_BINARY_DIR}/openssl-cygnet-test.cnf"
+    @ONLY
+)
+
 if(WIN32)
     target_sources(cygnetprov PRIVATE cygnetprov.def)
 endif()

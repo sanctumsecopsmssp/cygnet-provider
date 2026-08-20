@@ -19,14 +19,14 @@ const OSSL_ALGORITHM *cygnet_provider_query_operation(
     *no_cache = 0;
 
     switch (operation_id) {
-    case OSSL_OP_MAC:
-        return cygnet_mac_algorithms;
     case OSSL_OP_KEM:
         return cygnet_kem_algorithms;
     case OSSL_OP_KEYMGMT:
         return cygnet_keymgmt_algorithms;
     case OSSL_OP_SIGNATURE:
         return cygnet_signature_algorithms;
+    case OSSL_OP_MAC:
+        return cygnet_mac_algorithms;
     default:
         return NULL;
     }
@@ -59,9 +59,9 @@ const OSSL_PARAM *cygnet_provider_gettable_params(void *provider_ctx)
 int cygnet_provider_get_params(void *provider_ctx, OSSL_PARAM params[])
 {
     OSSL_PARAM *parameter;
-    char *name = "Cygnet Provider";
-    char *version = "0.1.1";
-    char *buildinfo = "Sanctum SecOps LLC";
+    char *name = "CygnetLib";
+    char *version = "1.0.0";
+    char *buildinfo = "1.0.0";
     int status = 1;
 
     (void)provider_ctx;
@@ -95,12 +95,18 @@ int OSSL_provider_init(
     void **provider_ctx)
 {
     static const OSSL_DISPATCH dispatch_table[] = {
-        { OSSL_FUNC_PROVIDER_TEARDOWN, (void (*)(void))cygnet_provider_teardown },
-        { OSSL_FUNC_PROVIDER_GETTABLE_PARAMS, (void (*)(void))cygnet_provider_gettable_params },
-        { OSSL_FUNC_PROVIDER_GET_PARAMS, (void (*)(void))cygnet_provider_get_params },
-        { OSSL_FUNC_PROVIDER_QUERY_OPERATION, (void (*)(void))cygnet_provider_query_operation },
-        { OSSL_FUNC_PROVIDER_UNQUERY_OPERATION, (void (*)(void))cygnet_provider_unquery_operation },
-        { OSSL_FUNC_PROVIDER_GET_CAPABILITIES, (void (*)(void))cygnet_provider_get_capabilities },
+        { OSSL_FUNC_PROVIDER_TEARDOWN,
+          (void (*)(void))cygnet_provider_teardown },
+        { OSSL_FUNC_PROVIDER_GETTABLE_PARAMS,
+          (void (*)(void))cygnet_provider_gettable_params },
+        { OSSL_FUNC_PROVIDER_GET_PARAMS,
+          (void (*)(void))cygnet_provider_get_params },
+        { OSSL_FUNC_PROVIDER_QUERY_OPERATION,
+          (void (*)(void))cygnet_provider_query_operation },
+        { OSSL_FUNC_PROVIDER_UNQUERY_OPERATION,
+          (void (*)(void))cygnet_provider_unquery_operation },
+        { OSSL_FUNC_PROVIDER_GET_CAPABILITIES,
+          (void (*)(void))cygnet_provider_get_capabilities },
         { 0, NULL }
     };
     CYGNET_PROVIDER_CTX *ctx;

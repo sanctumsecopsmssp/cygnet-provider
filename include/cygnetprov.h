@@ -34,6 +34,7 @@ extern const OSSL_ALGORITHM cygnet_mac_algorithms[];
 extern const OSSL_ALGORITHM cygnet_kem_algorithms[];
 extern const OSSL_ALGORITHM cygnet_keymgmt_algorithms[];
 extern const OSSL_ALGORITHM cygnet_signature_algorithms[];
+extern const OSSL_ALGORITHM cygnet_mac_algorithms[];
 
 #ifdef __cplusplus
 }
