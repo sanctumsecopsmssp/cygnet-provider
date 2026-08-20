@@ -13,7 +13,7 @@ activate = 1
 
 [fips_sect]
 activate = 1
-module = /usr/lib/x86_64-linux-gnu/ossl-modules-3/fips.so
+module = @CYGNET_FIPS_MODULE@
 
 [cygnet_sect]
 activate = 1
