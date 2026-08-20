@@ -60,8 +60,8 @@ int cygnet_provider_get_params(void *provider_ctx, OSSL_PARAM params[])
 {
     OSSL_PARAM *parameter;
     char *name = "CygnetLib";
-    char *version = "1.0.0";
-    char *buildinfo = "1.0.0";
+    char *version = CYGNETPROV_VERSION;
+    char *buildinfo = CYGNETPROV_VERSION;
     int status = 1;
 
     (void)provider_ctx;

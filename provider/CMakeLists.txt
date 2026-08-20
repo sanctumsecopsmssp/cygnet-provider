@@ -29,3 +29,6 @@ configure_file(
 if(WIN32)
     target_sources(cygnetprov PRIVATE cygnetprov.def)
 endif()
+
+target_compile_definitions(cygnetprov PRIVATE
+  CYGNETPROV_VERSION="${PROJECT_VERSION}")
